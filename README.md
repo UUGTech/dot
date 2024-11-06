@@ -9,3 +9,7 @@
 
 ## Wezterm
 [My Battle Field](./config/wezterm/)
+
+## yazi
+[My Hidden Paths](./config/yazi)
+
