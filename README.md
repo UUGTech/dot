@@ -13,3 +13,5 @@
 ## yazi
 [My Hidden Paths](./config/yazi)
 
+## GitUI
+[Veiled Avenues of Code History](./config/gitui)

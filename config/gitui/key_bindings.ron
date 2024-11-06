@@ -1,0 +1,15 @@
+(
+    move_left: Some(( code: Char('h'), modifiers: "")),
+    move_right: Some(( code: Char('l'), modifiers: "")),
+    move_up: Some(( code: Char('k'), modifiers: "")),
+    move_down: Some(( code: Char('j'), modifiers: "")),
+    popup_up: Some(( code: Char('k'), modifiers: "CONTROL")),
+    popup_down: Some(( code: Char('j'), modifiers: "CONTROL")),
+    find_commit_sha: Some(( code: Char('h'), modifiers: "CONTROL")),
+    commit: Some(( code: Enter,  modifiers: "")),
+    newline: Some(( code: Enter,  modifiers: "SHIFT")),
+
+    stash_open: Some(( code: Char('l'), modifiers: "CONTROL")),
+
+    open_help: Some(( code: F(1), modifiers: "")),
+)
