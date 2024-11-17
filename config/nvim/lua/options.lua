@@ -75,7 +75,6 @@ vim.api.nvim_create_autocmd({ "BufLeave" }, {
 })
 
 vim.api.nvim_set_keymap("i", "っｊ", "<ESC>", { noremap = true })
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-a>", "<Esc>A", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true })
