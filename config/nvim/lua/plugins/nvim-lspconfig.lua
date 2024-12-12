@@ -54,11 +54,14 @@ return {
 			"<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name == 'null-ls' or client.name == 'rust_analyzer' end, timeout_ms = 2000})<CR>"
 		)
 		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-			pattern = { "*.go", "*.lua", "*.proto", "*.py", "*.rs", "*.json", "*.tsx", "*.ts" },
+			pattern = { "*.go", "*.lua", "*.proto", "*.py", "*.rs", "*.json", "*.tsx", "*.ts", "*.tf" },
 			callback = function()
 				vim.lsp.buf.format({
 					filter = function(client)
-						return client.name == "null-ls" or client.name == "rust_analyzer"
+						return client.name == "null-ls"
+							or client.name == "rust_analyzer"
+							or client.name == "terraformls"
+							or client.name == "tflint"
 					end,
 					timeout_ms = 2000,
 				})
