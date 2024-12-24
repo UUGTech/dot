@@ -75,8 +75,3 @@
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - [folke/zen-mode.nvim](https://github.com/folke/zen-mode.nvim)
 
-## lokking for...
-- nice dap plugin
-- image plugin which works on wezterm
-
-
