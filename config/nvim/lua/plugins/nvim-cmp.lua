@@ -90,5 +90,10 @@ return {
 				ghost_text = false,
 			},
 		})
+
+		-- Disable nvim-cmp in telescope prompt
+		cmp.setup.filetype("TelescopePrompt", {
+			enabled = false,
+		})
 	end,
 }
