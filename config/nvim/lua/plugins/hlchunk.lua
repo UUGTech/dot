@@ -6,7 +6,7 @@ return {
 		require("hlchunk").setup({
 			chunk = {
 				style = {
-					{ fg = "#fab387" },
+					{ fg = "#98FFFB" },
 					{ fg = "#c21f30" },
 				},
 				priority = 9,
