@@ -63,6 +63,11 @@ return {
 		end
 		dashboard.section.header.val = getRandomHeaderValue()
 
+		dashboard.section.header.opts = {
+			hl = "Character", -- You can change "Type" to any highlight group you prefer
+			position = "center",
+		}
+
 		-- Set menu
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  > New file", "<cmd>ene <CR>"),
