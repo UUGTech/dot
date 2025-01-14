@@ -78,6 +78,7 @@ return {
 				"  > Settings",
 				":e ~/.config/nvim/_init.lua | :cd %:p:h | split . | wincmd k | pwd<CR>"
 			),
+			dashboard.button("y", "  > Yazi", ":Yazi<CR>"),
 			dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 		}
 
