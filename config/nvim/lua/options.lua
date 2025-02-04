@@ -31,6 +31,13 @@ vim.api.nvim_exec(
 vim.o.sidescrolloff = 5
 vim.o.wrap = false
 
+-- dotenv filetype
+vim.filetype.add({
+	pattern = {
+		[".env.*"] = "sh",
+	},
+})
+
 -- search
 vim.o.incsearch = true
 vim.o.ignorecase = true
@@ -80,9 +87,12 @@ vim.api.nvim_set_keymap("i", "<C-a>", "<Esc>A", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>n", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>p", ":bprev<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-v><C-v>", ":vert sball<CR>", { noremap = true, silent = true }) -- splits all buffers
+vim.api.nvim_set_keymap("n", "<leader>v", ":vert sball<CR>", { noremap = true, silent = true }) -- splits all buffers
 
 vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true }) -- move line down in normal mode
 vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true }) -- move line up in normal mode
 vim.api.nvim_set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true }) -- move line down in visual mode
 vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true }) -- move line up in visual mode
+
+vim.api.nvim_set_keymap("n", "<leader>s", ":set nospell<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>S", ":set spell<CR>", { noremap = true, silent = true })
