@@ -5,7 +5,7 @@ return {
 	priority = 1000,
 	config = function()
 		require("catppuccin").setup({
-			flavour = "mocha", -- latte, frappe, macchiato, mocha
+			flavour = "latte", -- latte, frappe, macchiato, mocha
 			background = { -- :h background
 				light = "latte",
 				dark = "mocha",
@@ -16,7 +16,7 @@ return {
 			dim_inactive = {
 				enabled = true, -- dims the background color of inactive window
 				shade = "dark",
-				percentage = 0.15, -- percentage of the shade to apply to the inactive window
+				percentage = 0.30, -- percentage of the shade to apply to the inactive window
 			},
 			no_italic = false, -- Force no italic
 			no_bold = false, -- Force no bold
@@ -48,9 +48,14 @@ return {
 				return highlights
 			end,
 			integrations = {
+				barbar = true,
 				cmp = true,
 				gitsigns = true,
 				nvimtree = true,
+				navic = {
+					enabled = true,
+					custom_bg = "NONE",
+				},
 				hop = true,
 				treesitter = true,
 				notify = true,

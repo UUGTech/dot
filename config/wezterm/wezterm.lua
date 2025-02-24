@@ -240,9 +240,6 @@ config.visual_bell = {
 	fade_out_function = "EaseOut",
 	fade_out_duration_ms = 20,
 }
-config.colors = {
-	visual_bell = "#305060",
-}
 
 -- mouse
 config.mouse_bindings = {
@@ -309,6 +306,15 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	end
 end)
 
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Catppuccin Latte"
+config.colors = {
+	visual_bell = "#acb0be",
+	tab_bar = {
+		active_tab = {
+			bg_color = "#179299",
+			fg_color = "#eff1f5",
+		},
+	},
+}
 config.use_fancy_tab_bar = false
 return config

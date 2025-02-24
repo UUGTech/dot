@@ -1,7 +1,7 @@
 # 😎 My Neovim Plugins
 
-![Capture](../../asset/capture_00.png)
-![Capture](../../asset/capture_01.png)
+![Capture](../../asset/capture_light_00.png)
+![Capture](../../asset/capture_light_01.png)
 
 ## 🚄Move Fast!!
 - [jinh0/eyeliner.nvim](https://github.com/jinh0/eyeliner.nvim)
