@@ -5,6 +5,10 @@ return {
 	version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
 	opts = {
 		provider = "copilot",
+		copilot = {
+			endpoint = "https://api.githubcopilot.com",
+			model = "claude-3.7-sonnet",
+		},
 		-- add any opts here
 		windows = {
 			---@type "right" | "left" | "top" | "bottom"
