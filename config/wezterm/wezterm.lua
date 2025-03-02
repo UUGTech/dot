@@ -31,6 +31,15 @@ config.keys = {
 		key = "y",
 		action = act.QuickSelect,
 	},
+	-- Select and copy entire visible contents
+	{
+		mods = "LEADER",
+		key = "a",
+		action = wezterm.action_callback(function(window, pane)
+			local selected = pane:get_lines_as_text(pane:get_dimensions().scrollback_rows)
+			window:copy_to_clipboard(selected, "Clipboard")
+		end),
+	},
 	{ -- select url
 		mods = "LEADER",
 		key = "u",
