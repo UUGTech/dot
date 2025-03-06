@@ -59,7 +59,6 @@
 - [ruifm/gitlinker.nvim](https://github.com/ruifm/gitlinker.nvim)
 - [FabijanZulj/blame.nvim](https://github.com/FabijanZulj/blame.nvim)
 - [pwntester/octo.nvim](https://github.com/pwntester/octo.nvim)
-- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 
 ## ✨A Hint of Magic
