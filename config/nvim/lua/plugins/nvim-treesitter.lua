@@ -11,7 +11,6 @@ return {
 				additional_vim_regex_highlighting = false,
 			},
 		})
-		vim.g.markdown_folding = 1
 		vim.treesitter.language.register("markdown", "octo")
 	end,
 }

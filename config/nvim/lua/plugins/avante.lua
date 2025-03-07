@@ -3,6 +3,16 @@ return {
 	event = "VeryLazy",
 	lazy = false,
 	version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
+	cond = function()
+		local disable_dirs = { "~/Documents" }
+		local cwd = vim.fn.getcwd()
+		for _, dir in ipairs(disable_dirs) do
+			if cwd:find(vim.fn.expand(dir), 1, true) == 1 then
+				return false
+			end
+		end
+		return true
+	end,
 	opts = {
 		provider = "copilot",
 		copilot = {

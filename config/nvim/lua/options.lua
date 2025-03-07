@@ -97,3 +97,42 @@ vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, sile
 
 vim.api.nvim_set_keymap("n", "<leader>s", ":set nospell<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>S", ":set spell<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_create_user_command("OpenDiary", function()
+	local date_dir = os.date("%Y/%m")
+	local file_path = "~/Documents/diary/" .. date_dir .. "/" .. os.date("%Y-%m-%d") .. ".md"
+	local expanded_path = vim.fn.expand(file_path)
+	local template_path = vim.fn.expand("~/Documents/diary/template.md")
+
+	local dir_path = vim.fn.expand("~/Documents/diary/" .. date_dir)
+	if vim.fn.isdirectory(dir_path) == 0 then
+		vim.fn.mkdir(dir_path, "p")
+	end
+
+	if vim.fn.filereadable(expanded_path) == 0 then
+		if vim.fn.filereadable(template_path) == 1 then
+			local template_content = vim.fn.readfile(template_path)
+			vim.cmd("edit " .. file_path)
+			vim.api.nvim_buf_set_lines(0, 0, -1, false, template_content)
+			vim.cmd("write")
+		else
+			vim.cmd("edit " .. file_path)
+		end
+	else
+		vim.cmd("edit " .. file_path)
+	end
+end, {})
+
+vim.api.nvim_set_keymap("n", "<Leader>d", ":OpenDiary<CR>", { noremap = true, silent = true })
+
+vim.g.markdown_folding = 1
+vim.api.nvim_create_autocmd("BufReadPost", {
+	pattern = "*.md",
+	callback = function()
+		vim.defer_fn(function()
+			if vim.bo.filetype == "markdown" then
+				vim.cmd("normal! zR")
+			end
+		end, 100)
+	end,
+})
