@@ -2,7 +2,7 @@ return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	lazy = false,
-	version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
+	version = "0.0.20", -- set this to "*" if you want to always pull the latest change, false to update on release
 	cond = function()
 		local disable_dirs = { "~/Documents" }
 		local cwd = vim.fn.getcwd()
