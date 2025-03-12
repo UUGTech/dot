@@ -30,6 +30,7 @@ vim.api.nvim_exec(
 )
 vim.o.sidescrolloff = 5
 vim.o.wrap = false
+vim.o.signcolumn = "yes:2"
 
 -- dotenv filetype
 vim.filetype.add({
