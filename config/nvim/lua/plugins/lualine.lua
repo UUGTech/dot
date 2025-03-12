@@ -43,8 +43,12 @@ return {
 				component_separators = { left = "|", right = "|" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
-					statusline = { "Avante", "AvanteInput" },
-					winbar = { "Avante", "AvanteInput" },
+					statusline = { "Avante", "AvanteInput", "AvanteSelectedFiles", "NvimTree" },
+					winbar = { "Avante", "AvanteInput", "AvanteSelectedFiles", "NvimTree" },
+				},
+				disabled_buftypes = {
+					statusline = { "nofile" },
+					winbar = { "nofile" },
 				},
 				ignore_focus = {},
 				always_divide_middle = true,
