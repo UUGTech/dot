@@ -1,8 +1,7 @@
 return {
 	"yetone/avante.nvim",
-	event = "VeryLazy",
 	lazy = false,
-	version = "*", -- set this to "*" if you want to always pull the latest change, false to update on release
+	branch = "main", -- set this to "*" if you want to always pull the latest change, false to update on release
 	cond = function()
 		local disable_dirs = { "~/Documents" }
 		local cwd = vim.fn.getcwd()
@@ -18,6 +17,7 @@ return {
 		copilot = {
 			endpoint = "https://api.githubcopilot.com",
 			model = "claude-3.7-sonnet",
+			disable_tools = true,
 		},
 		-- add any opts here
 		windows = {
@@ -46,6 +46,17 @@ return {
 				focus_on_apply = "ours", -- which diff to focus after applying
 			},
 		},
+		-- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
+		system_prompt = function()
+			local hub = require("mcphub").get_hub_instance()
+			return hub:get_active_servers_prompt()
+		end,
+		-- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
+		custom_tools = function()
+			return {
+				require("mcphub.extensions.avante").mcp_tool(),
+			}
+		end,
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
