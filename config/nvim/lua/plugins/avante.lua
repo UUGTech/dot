@@ -17,7 +17,7 @@ return {
 		copilot = {
 			endpoint = "https://api.githubcopilot.com",
 			model = "claude-3.7-sonnet",
-			disable_tools = true,
+			disable_tools = false,
 		},
 		-- add any opts here
 		windows = {
