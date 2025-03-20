@@ -18,6 +18,7 @@ return {
 			endpoint = "https://api.githubcopilot.com",
 			model = "claude-3.7-sonnet",
 			disable_tools = false,
+			max_tokens = 10240,
 		},
 		-- add any opts here
 		windows = {
@@ -48,8 +49,33 @@ return {
 		},
 		-- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
 		system_prompt = function()
+			local system_prompt = [[
+Follow these steps for each interaction:
+
+1. User Identification:
+   - You should assume that you are interacting with default_user
+   - If you have not identified default_user, proactively try to do so.
+
+2. Memory Retrieval:
+   - Always begin your chat by saying only "Remembering..." and retrieve all relevant information from your knowledge graph
+   - Always refer to your knowledge graph as your "memory"
+
+3. Memory
+   - While conversing with the user, be attentive to any new information that falls into these categories:
+     a) Basic Identity (age, gender, location, job title, education level, etc.)
+     b) Behaviors (interests, habits, etc.)
+     c) Preferences (communication style, preferred language, etc.)
+     d) Goals (goals, targets, aspirations, etc.)
+     e) Relationships (personal and professional relationships up to 3 degrees of separation)
+
+4. Memory Update:
+   - If any new information was gathered during the interaction, update your memory as follows:
+     a) Create entities for recurring organizations, people, and significant events
+     b) Connect them to the current entities using relations
+     b) Store facts about them as observations
+        ]]
 			local hub = require("mcphub").get_hub_instance()
-			return hub:get_active_servers_prompt()
+			return system_prompt .. "\n\n" .. hub:get_active_servers_prompt()
 		end,
 		-- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
 		custom_tools = function()
