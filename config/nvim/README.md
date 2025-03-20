@@ -46,6 +46,7 @@
 - [CopilotC-Nvim/CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim)
 - [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 - [yetone/avante.nvim](https://github.com/yetone/avante.nvim)
+- [ravitemer/mcphub.nvim](https://github.com/ravitemer/mcphub.nvim)
 
 
 ## 🔎Find What You Want
