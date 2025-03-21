@@ -47,6 +47,12 @@ return {
 				focus_on_apply = "ours", -- which diff to focus after applying
 			},
 		},
+		highlights = {
+			diff = {
+				current = "DiffText",
+				incoming = "DiffAdd",
+			},
+		},
 		-- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
 		system_prompt = function()
 			local system_prompt = [[

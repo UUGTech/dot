@@ -45,6 +45,13 @@ return {
 					highlights[v] = spell_options
 				end
 
+				-- Git conflict markers highlights
+				highlights.ConflictMarkerBegin = { bg = colors.red, fg = colors.base }
+				highlights.ConflictMarkerOurs = { bg = colors.red, fg = colors.base, style = { "italic" } }
+				highlights.ConflictMarkerCommon = { bg = colors.blue, fg = colors.base }
+				highlights.ConflictMarkerTheirs = { bg = colors.green, fg = colors.base, style = { "italic" } }
+				highlights.ConflictMarkerEnd = { bg = colors.green, fg = colors.base }
+
 				return highlights
 			end,
 			integrations = {
