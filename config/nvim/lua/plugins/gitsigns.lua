@@ -34,23 +34,23 @@ return {
 					return "<Ignore>"
 				end, { expr = true })
 
-				-- Actions hoge
-				map("n", "<leader>hs", gs.stage_hunk)
-				map("n", "<leader>hr", gs.reset_hunk)
+				-- Actions
+				map("n", "<leader>hs", gs.stage_hunk, { desc = "stage_hunk" })
+				map("n", "<leader>hr", gs.reset_hunk, { desc = "reset_hunk" })
 				map("v", "<leader>hs", function()
 					gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end)
+				end, { desc = "stage_hunk" })
 				map("v", "<leader>hr", function()
 					gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end)
-				map("n", "<leader>hS", gs.stage_buffer)
-				map("n", "<leader>hu", gs.undo_stage_hunk)
-				map("n", "<leader>hR", gs.reset_buffer)
-				map("n", "<leader>hp", gs.preview_hunk)
+				end, { desc = "reset_hunk" })
+				map("n", "<leader>hS", gs.stage_buffer, { desc = "stage_buffer" })
+				map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "undo_stage_hunk" })
+				map("n", "<leader>hR", gs.reset_buffer, { desc = "reset_buffer" })
+				map("n", "<leader>hp", gs.preview_hunk, { desc = "preview_hunk" })
 				map("n", "<leader>hb", function()
 					gs.blame_line({ full = true })
-				end)
-				map("n", "<leader>tb", gs.toggle_current_line_blame)
+				end, { desc = "blame_line" })
+				map("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "toggle_current_line_blame" })
 				map("n", "<leader>hd", function()
 					-- master or main
 					local m_branch = vim.fn.system("git branch -l master main")
@@ -65,11 +65,11 @@ return {
 					else
 						gs.diffthis("main")
 					end
-				end)
+				end, { desc = "diffthis" })
 				map("n", "<leader>hD", function()
 					gs.diffthis("~")
-				end)
-				map("n", "<leader>td", gs.toggle_deleted)
+				end, { desc = "diffthis" })
+				map("n", "<leader>td", gs.toggle_deleted, { desc = "toggle_deleted" })
 
 				-- Text object
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
