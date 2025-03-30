@@ -13,7 +13,7 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
-  "code-playground.nvim": { "branch": "main", "commit": "102e73373480e48a19c23e3975924bb93259b2e9" },
+  "code-playground.nvim": { "branch": "main", "commit": "7dba79c530008b08e4fd20cbe8ee25125caa0141" },
   "codesnap.nvim": { "branch": "main", "commit": "6400480aa6cc366cbd931146c429aaa64680dab9" },
   "color-converter.nvim": { "branch": "main", "commit": "5888e92cbccf0de202d2b617f6a8f3011a43bd52" },
   "copilot.lua": { "branch": "master", "commit": "20723713aa5fbfd535fcf0cd28753a899ca3d526" },
