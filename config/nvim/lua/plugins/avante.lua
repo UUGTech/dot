@@ -16,7 +16,7 @@ return {
 		provider = "copilot",
 		copilot = {
 			endpoint = "https://api.githubcopilot.com",
-			model = "claude-3.7-sonnet",
+			model = "claude-3.5-sonnet",
 			disable_tools = false,
 			max_tokens = 10240,
 		},
@@ -52,6 +52,9 @@ return {
 				current = "DiffText",
 				incoming = "DiffAdd",
 			},
+		},
+		behaviour = {
+			enable_claude_text_editor_tool_mode = true,
 		},
 		-- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
 		system_prompt = function()
