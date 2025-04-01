@@ -3,7 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("gitsigns").setup({
-			sign_priority = 60000,
+			sign_priority = 1,
 			on_attach = function(bufnr)
 				local gs = package.loaded.gitsigns
 
