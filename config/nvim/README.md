@@ -52,6 +52,7 @@
 ## 🔎Find What You Want
 - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [prochri/telescope-all-recent.nvim](https://github.com/prochri/telescope-all-recent.nvim)
 - [mikavilpas/yazi.nvim](https://github.com/mikavilpas/yazi.nvim)
 
 
