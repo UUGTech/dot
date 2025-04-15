@@ -5,7 +5,7 @@
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
   "alpha-nvim": { "branch": "main", "commit": "de72250e054e5e691b9736ee30db72c65d560771" },
   "auto-input-switch.nvim": { "branch": "master", "commit": "29f1fd0bcf0faae7a07df2f5535f3adca4a13131" },
-  "avante.nvim": { "branch": "main", "commit": "0d26590389ff7ab892bf67a411961e43d94f4e6a" },
+  "avante.nvim": { "branch": "main", "commit": "54a1df28b67a97e0f05ad33808bea6c1abae7ea9" },
   "blame.nvim": { "branch": "main", "commit": "39bb4cda9e658d053a43919b10ca52c0a4d738e1" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429" },
