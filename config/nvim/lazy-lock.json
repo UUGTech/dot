@@ -72,7 +72,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "855c97005c8eebcdd19846f2e54706bffd40ee96" },
   "octo.nvim": { "branch": "master", "commit": "8faa8c867d2f5749d6fc826fcb6dfabb85fa7c7c" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
-  "render-markdown.nvim": { "branch": "main", "commit": "2d2b30f9fd487e8754a87563f7e8d6485a12493a" },
+  "render-markdown.nvim": { "branch": "main", "commit": "080104e4dce26819efb4f4c83d1b7b2d82b96f7c" },
   "sqlite.lua": { "branch": "master", "commit": "50092d60feb242602d7578398c6eb53b4a8ffe7b" },
   "telescope-all-recent.nvim": { "branch": "main", "commit": "e437f60ea468268e49ffdc0c9ed7c5ba384e63cf" },
   "telescope-git-file-history.nvim": { "branch": "master", "commit": "c27d99ba88ec5f0b6d2b9f9bc67dd3d14c610b25" },
