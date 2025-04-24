@@ -1,5 +1,5 @@
 return {
 	"windwp/nvim-autopairs",
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	opts = {}, -- this is equalent to setup({}) function
 }

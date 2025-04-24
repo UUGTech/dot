@@ -1,6 +1,6 @@
 return {
 	"amekusa/auto-input-switch.nvim",
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("auto-input-switch").setup({
 			restore = { enable = false },

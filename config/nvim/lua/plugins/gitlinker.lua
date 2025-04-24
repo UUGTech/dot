@@ -1,7 +1,6 @@
 return {
 	"ruifm/gitlinker.nvim",
-	depends = { "nvim-lua/plenary.nvim" },
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("gitlinker").setup({
 			opts = {

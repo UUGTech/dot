@@ -1,7 +1,7 @@
 return {
 	"olexsmir/gopher.nvim",
 	ft = "go",
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("gopher").setup({})
 	end,

@@ -1,6 +1,6 @@
 return {
 	"jghauser/fold-cycle.nvim",
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("fold-cycle").setup()
 		vim.keymap.set("n", "<tab>", function()

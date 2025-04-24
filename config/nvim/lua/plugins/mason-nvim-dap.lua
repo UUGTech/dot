@@ -24,7 +24,7 @@ return {
 		"rcarriga/nvim-dap-ui",
 		"leoluz/nvim-dap-go",
 	},
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("mason").setup()
 		require("mason-nvim-dap").setup({

@@ -1,6 +1,6 @@
 return {
 	"vidocqh/data-viewer.nvim",
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	ft = { "csv" },
 	opts = {},
 	dependencies = {

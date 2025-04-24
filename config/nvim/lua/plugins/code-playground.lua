@@ -3,5 +3,5 @@ return {
 	config = function()
 		require("code-playground").setup()
 	end,
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 }
