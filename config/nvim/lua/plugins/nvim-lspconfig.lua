@@ -83,7 +83,7 @@ return {
 			vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = true })
 		vim.diagnostic.config({
 			signs = {
-				priority = 6,
+				priority = 1,
 			},
 		})
 	end,
