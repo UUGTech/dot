@@ -1,102 +1,38 @@
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
+	"maxmx03/solarized.nvim",
 	lazy = false,
 	priority = 1000,
-	config = function()
-		require("catppuccin").setup({
-			flavour = "latte", -- latte, frappe, macchiato, mocha
-			background = { -- :h background
-				light = "latte",
-				dark = "mocha",
-			},
-			transparent_background = false, -- disables setting the background color.
-			show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-			term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
-			dim_inactive = {
-				enabled = true, -- dims the background color of inactive window
-				shade = "dark",
-				percentage = 0.30, -- percentage of the shade to apply to the inactive window
-			},
-			no_italic = false, -- Force no italic
-			no_bold = false, -- Force no bold
-			no_underline = false, -- Force no underline
-			styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-				comments = { "italic" }, -- Change the style of comments
-				conditionals = { "italic" },
-				loops = {},
-				functions = {},
-				keywords = {},
-				strings = {},
-				variables = {},
-				numbers = {},
-				booleans = {},
-				properties = {},
-				types = {},
-				operators = {},
-			},
-			color_overrides = {},
-			custom_highlights = function(colors)
-				local highlights = {}
-
-				local spell_options = { style = { "bold", "underline" }, fg = colors.pink }
-				local spell_groups = { "SpellBad", "SpellCap", "SpellLocal", "SpellRare" }
-				for _, v in ipairs(spell_groups) do
-					highlights[v] = spell_options
-				end
-
-				-- Git conflict markers highlights
-				highlights.ConflictMarkerBegin = { bg = colors.red, fg = colors.base }
-				highlights.ConflictMarkerOurs = { bg = colors.red, fg = colors.base, style = { "italic" } }
-				highlights.ConflictMarkerCommon = { bg = colors.blue, fg = colors.base }
-				highlights.ConflictMarkerTheirs = { bg = colors.green, fg = colors.base, style = { "italic" } }
-				highlights.ConflictMarkerEnd = { bg = colors.green, fg = colors.base }
-
-				return highlights
-			end,
-			integrations = {
-				render_markdown = true,
-				barbar = true,
-				cmp = true,
-				gitsigns = true,
-				nvimtree = true,
-				navic = {
-					enabled = true,
-					custom_bg = "NONE",
-				},
-				hop = true,
-				treesitter = true,
-				notify = true,
-				mini = {
-					enabled = true,
-					indentscope_color = "",
-				},
-				noice = true,
-				native_lsp = {
-					enabled = true,
-					virtual_text = {
-						errors = { "italic" },
-						hints = { "italic" },
-						warnings = { "italic" },
-						information = { "italic" },
-						ok = { "italic" },
-					},
-					underlines = {
-						errors = { "underline" },
-						hints = { "underline" },
-						warnings = { "underline" },
-						information = { "underline" },
-						ok = { "underline" },
-					},
-					inlay_hints = {
-						background = true,
-					},
-				},
-				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-			},
-		})
-	end,
-	init = function()
-		vim.cmd("colorscheme catppuccin")
+	---@type solarized.config
+	opts = {
+		transparent = {
+			enabled = true, -- Master switch to enable transparency
+			pmenu = true, -- Popup menu (e.g., autocomplete suggestions)
+			normal = true, -- Main editor window background
+			normalfloat = true, -- Floating windows
+			neotree = true, -- Neo-tree file explorer
+			nvimtree = true, -- Nvim-tree file explorer
+			whichkey = false, -- Which-key popup
+			telescope = true, -- Telescope fuzzy finder
+			lazy = true, -- Lazy plugin manager UI
+			mason = true, -- Mason manage external tooling
+		},
+	},
+	config = function(_, opts)
+		vim.o.termguicolors = true
+		vim.o.background = "light"
+		require("solarized").setup(opts)
+		vim.cmd.colorscheme("solarized")
+		-- Explicitly set diff highlights for light theme
+		local color = require("solarized.color")
+		local colors = require("solarized.utils").get_colors()
+		local darken = color.darken
+		local lighten = color.lighten
+		local blend = color.blend
+		local shade = color.shade
+		local tint = color.tint
+		vim.api.nvim_set_hl(0, "DiffAdd", { bg = lighten(colors.green, 50) }) -- Light green background for added lines
+		vim.api.nvim_set_hl(0, "DiffDelete", { bg = lighten(colors.magenta, 50) }) -- Light red background for deleted lines
+		vim.api.nvim_set_hl(0, "DiffChange", { bg = lighten(colors.yellow, 50) }) -- Light yellow background for changed lines
+		vim.api.nvim_set_hl(0, "DiffText", { bg = lighten(colors.blue, 50) }) -- Brighter yellow for the actual changed text
 	end,
 }

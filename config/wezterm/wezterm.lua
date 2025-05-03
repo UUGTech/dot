@@ -315,13 +315,20 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	end
 end)
 
-config.color_scheme = "Catppuccin Latte"
+local canonical_solarized = require("canonical_solarized")
+canonical_solarized.apply_to_config(config)
+config.color_scheme = "Canonical Solarized Light"
 config.colors = {
-	visual_bell = "#acb0be",
+	visual_bell = "#657b83",
 	tab_bar = {
+		background = "#fdf6e3",
 		active_tab = {
-			bg_color = "#179299",
-			fg_color = "#eff1f5",
+			bg_color = "#859900",
+			fg_color = "#eee8d5",
+		},
+		inactive_tab = {
+			bg_color = "#eee8d5",
+			fg_color = "#002b36",
 		},
 	},
 }

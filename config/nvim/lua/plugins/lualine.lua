@@ -27,19 +27,11 @@ return {
 			color = { fg = "#179299", gui = "bold" },
 		}
 		local navic = require("nvim-navic")
-		local custom_theme = require("lualine.themes.catppuccin")
-
-		custom_theme.normal.a.bg = "#179299"
-		custom_theme.insert.a.bg = "#1e66f5"
-		custom_theme.normal.b.bg = "#ccd0da"
-		custom_theme.insert.b.bg = "#ccd0da"
-		custom_theme.normal.b.fg = "#179299"
-		custom_theme.insert.b.fg = "#1e66f5"
 
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = custom_theme,
+				theme = "solarized",
 				component_separators = { left = "|", right = "|" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
