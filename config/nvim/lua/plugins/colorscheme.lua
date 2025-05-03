@@ -16,6 +16,7 @@ return {
 			lazy = true, -- Lazy plugin manager UI
 			mason = true, -- Mason manage external tooling
 		},
+		variant = "autumn",
 	},
 	config = function(_, opts)
 		vim.o.termguicolors = true
@@ -30,9 +31,9 @@ return {
 		local blend = color.blend
 		local shade = color.shade
 		local tint = color.tint
-		vim.api.nvim_set_hl(0, "DiffAdd", { bg = lighten(colors.green, 50) }) -- Light green background for added lines
-		vim.api.nvim_set_hl(0, "DiffDelete", { bg = lighten(colors.magenta, 50) }) -- Light red background for deleted lines
-		vim.api.nvim_set_hl(0, "DiffChange", { bg = lighten(colors.yellow, 50) }) -- Light yellow background for changed lines
-		vim.api.nvim_set_hl(0, "DiffText", { bg = lighten(colors.blue, 50) }) -- Brighter yellow for the actual changed text
+		vim.api.nvim_set_hl(0, "DiffAdd", { bg = lighten(colors.green, 50) })
+		vim.api.nvim_set_hl(0, "DiffDelete", { bg = lighten(colors.magenta, 50) })
+		vim.api.nvim_set_hl(0, "DiffChange", { bg = lighten(colors.yellow, 50) })
+		vim.api.nvim_set_hl(0, "DiffText", { bg = lighten(colors.blue, 50) })
 	end,
 }
