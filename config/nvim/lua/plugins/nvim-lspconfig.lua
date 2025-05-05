@@ -1,3 +1,45 @@
+local function goto_definition()
+	local params = vim.lsp.util.make_position_params()
+
+	vim.lsp.buf_request(0, "textDocument/definition", params, function(err, result, ctx)
+		if err then
+			vim.notify("Error finding definition: " .. err.message, vim.log.levels.ERROR)
+			return
+		end
+
+		if result == nil or vim.tbl_isempty(result) then
+			vim.notify("Definition not found", vim.log.levels.WARN)
+			return
+		end
+
+		local target = result[1]
+		if vim.tbl_islist(result) then
+			target = result[1]
+		else
+			target = result
+		end
+
+		local uri = target.uri or target.targetUri
+		local range = target.range or target.targetSelectionRange
+		local fname = vim.uri_to_fname(uri)
+
+		-- ファイルが既に開いているか確認
+		for _, win in ipairs(vim.api.nvim_list_wins()) do
+			local buf = vim.api.nvim_win_get_buf(win)
+			if vim.api.nvim_buf_get_name(buf) == fname then
+				-- ファイルが既に開いていたらそのウィンドウに移動
+				vim.api.nvim_set_current_win(win)
+				vim.api.nvim_win_set_cursor(win, { range.start.line + 1, range.start.character })
+				return
+			end
+		end
+
+		-- ファイルが開いていない場合、新しく開く
+		vim.cmd("edit " .. fname)
+		vim.api.nvim_win_set_cursor(0, { range.start.line + 1, range.start.character })
+	end)
+end
+
 return {
 	-- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
@@ -70,6 +112,7 @@ return {
 		-- vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>") -- use telescope
 		vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 		vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+		vim.keymap.set("n", "gd", goto_definition, { noremap = true, silent = true })
 		-- vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>") -- use telescope
 		vim.keymap.set({ "n", "v" }, "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 		-- vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
