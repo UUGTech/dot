@@ -10,6 +10,15 @@ return {
 				disable = { "c", "rust" },
 				additional_vim_regex_highlighting = false,
 			},
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<leader>n",
+					node_incremental = "<leader>k",
+					scope_incremental = "<leader>c",
+					node_decremental = "<leader>j",
+				},
+			},
 		})
 		vim.treesitter.language.register("markdown", "octo")
 	end,
