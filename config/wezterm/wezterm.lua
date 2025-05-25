@@ -7,7 +7,7 @@ config.tab_bar_at_bottom = true
 config.tab_max_width = 32
 config.window_background_opacity = 1.00
 config.window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW"
-config.macos_window_background_blur = 2
+config.macos_window_background_blur = 9
 config.window_background_image = config.default_background_image
 config.window_background_image_hsb = {
 	brightness = 0.03,
@@ -188,7 +188,7 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
 			win:set_config_overrides({
-				window_background_opacity = 0.90,
+				window_background_opacity = 0.85,
 				window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW",
 			})
 		end),
