@@ -91,9 +91,6 @@ vim.api.nvim_set_keymap("n", "<leader>n", ":bnext<CR>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "<leader>p", ":bprev<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>v", ":vert sball<CR>", { noremap = true, silent = true }) -- splits all buffers
 
-vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true })
-vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
-
 -- Center search results when navigating
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true })
