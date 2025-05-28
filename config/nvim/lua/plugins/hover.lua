@@ -29,7 +29,15 @@ return {
 		})
 
 		-- Setup keymaps
-		vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+		vim.keymap.set("n", "K", function()
+			local api = vim.api
+			local hover_win = vim.b.hover_preview
+			if hover_win and api.nvim_win_is_valid(hover_win) then
+				api.nvim_set_current_win(hover_win)
+			else
+				require("hover").hover()
+			end
+		end, { desc = "hover.nvim" })
 		vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 		vim.keymap.set("n", "<C-p>", function()
 			require("hover").hover_switch("previous")
