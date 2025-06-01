@@ -96,14 +96,30 @@ return {
 		local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
 		-- Make basic movements repeatable
-		vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
-		vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+		vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+		vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
 
 		-- Optionally, make builtin f, F, t, T also repeatable with ; and ,
-		vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, { expr = true })
-		vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
-		vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
-		vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
+		local f_move = function()
+			require("eyeliner").highlight({ forward = true })
+			return ts_repeat_move.builtin_f_expr()
+		end
+		local F_move = function()
+			require("eyeliner").highlight({ forward = false })
+			return ts_repeat_move.builtin_F_expr()
+		end
+		local t_move = function()
+			require("eyeliner").highlight({ forward = true })
+			return ts_repeat_move.builtin_t_expr()
+		end
+		local T_move = function()
+			require("eyeliner").highlight({ forward = false })
+			return ts_repeat_move.builtin_T_expr()
+		end
+		vim.keymap.set({ "n", "x", "o" }, "f", f_move, { expr = true })
+		vim.keymap.set({ "n", "x", "o" }, "F", F_move, { expr = true })
+		vim.keymap.set({ "n", "x", "o" }, "t", t_move, { expr = true })
+		vim.keymap.set({ "n", "x", "o" }, "T", T_move, { expr = true })
 
 		local gs = require("gitsigns")
 		local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)

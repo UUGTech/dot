@@ -7,7 +7,7 @@ return {
 			max_length = 9999,
 			disable_filetypes = {},
 			disable_buftypes = {},
-			default_keymaps = true,
+			default_keymaps = false,
 		})
 	end,
 	event = { "BufReadPre", "BufAdd", "BufNewFile" },
