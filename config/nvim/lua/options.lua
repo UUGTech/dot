@@ -10,6 +10,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
+vim.o.splitright = true
 
 vim.o.visualbell = true
 vim.o.number = true
