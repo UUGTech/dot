@@ -31,10 +31,13 @@ return {
 		local blend = color.blend
 		local shade = color.shade
 		local tint = color.tint
-		vim.api.nvim_set_hl(0, "DiffAdd", { bg = lighten(colors.green, 50) })
-		vim.api.nvim_set_hl(0, "DiffDelete", { bg = lighten(colors.magenta, 50) })
-		vim.api.nvim_set_hl(0, "DiffChange", { bg = lighten(colors.yellow, 50) })
-		vim.api.nvim_set_hl(0, "DiffText", { bg = lighten(colors.blue, 50) })
+		vim.api.nvim_set_hl(0, "DiffAdd", { fg = colors.green })
+		vim.api.nvim_set_hl(0, "DiffDelete", { fg = colors.magenta })
+		vim.api.nvim_set_hl(0, "DiffChange", { fg = colors.yellow })
+		vim.api.nvim_set_hl(0, "DiffText", { fg = colors.blue })
+		vim.api.nvim_set_hl(0, "GitSignsAddInLine", { fg = colors.base03, bg = lighten(colors.green, 70) })
+		vim.api.nvim_set_hl(0, "GitSignsDeleteInLine", { fg = colors.base03, bg = lighten(colors.magenta, 70) })
+		vim.api.nvim_set_hl(0, "GitSignsChangeInLine", { fg = colors.base03, bg = lighten(colors.yellow, 70) })
 		vim.api.nvim_set_hl(0, "NeotestPassed", { fg = colors.green })
 		vim.api.nvim_set_hl(0, "NeotestRunning", { fg = colors.yellow })
 		vim.api.nvim_set_hl(0, "NeotestSkipped", { fg = colors.blue })
