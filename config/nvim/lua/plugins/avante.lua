@@ -15,11 +15,16 @@ return {
 	opts = {
 		provider = "copilot",
 		mode = "agentic",
-		copilot = {
-			endpoint = "https://api.githubcopilot.com",
-			model = "claude-3.7-sonnet",
-			disable_tools = false,
-			max_tokens = 10240,
+		providers = {
+			copilot = {
+				endpoint = "https://api.githubcopilot.com",
+				model = "claude-3.7-sonnet",
+				disable_tools = false,
+				extra_request_body = {
+					temperature = 0.75,
+					max_tokens = 20480,
+				},
+			},
 		},
 		-- add any opts here
 		windows = {
