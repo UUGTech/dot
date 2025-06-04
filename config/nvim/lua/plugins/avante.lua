@@ -68,6 +68,22 @@ return {
 			debounce = 600,
 			throttle = 600,
 		},
+		behaviour = {
+			auto_focus_sidebar = true,
+			auto_suggestions = false, -- Experimental stage
+			auto_suggestions_respect_ignore = false,
+			auto_set_highlight_group = true,
+			auto_set_keymaps = true,
+			auto_apply_diff_after_generation = false,
+			jump_result_buffer_on_finish = false,
+			support_paste_from_clipboard = false,
+			minimize_diff = true,
+			enable_token_counting = true,
+			use_cwd_as_project_root = true,
+			auto_focus_on_diff_view = false,
+			---@type boolean | string[] -- true: auto-approve all tools, false: normal prompts, string[]: auto-approve specific tools by name
+			auto_approve_tool_permissions = false, -- Default: show permission prompts for all tools
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
