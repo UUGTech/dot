@@ -89,7 +89,7 @@ return {
 			},
 		})
 		-- keyboard shortcut
-		vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+		-- vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 		vim.keymap.set(
 			"n",
 			"gf",
@@ -127,6 +127,9 @@ return {
 		vim.diagnostic.config({
 			signs = {
 				priority = 1,
+			},
+			float = {
+				border = "rounded",
 			},
 		})
 	end,
