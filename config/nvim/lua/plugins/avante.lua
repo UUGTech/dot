@@ -18,7 +18,7 @@ return {
 		providers = {
 			copilot = {
 				endpoint = "https://api.githubcopilot.com",
-				model = "claude-3.7-sonnet",
+				model = "claude-sonnet-4",
 				disable_tools = false,
 				extra_request_body = {
 					temperature = 0.75,
