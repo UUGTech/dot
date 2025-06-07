@@ -17,7 +17,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showmatch = true
 vim.o.matchtime = 1
-vim.o.listchars = "eol:$,tab:..,trail:_,lead:."
+-- vim.o.listchars = "eol:$,tab:..,trail:_,lead:."
 vim.o.list = true
 vim.o.scrolloff = 5
 vim.api.nvim_exec(

@@ -17,6 +17,9 @@ return {
 			mason = true, -- Mason manage external tooling
 		},
 		variant = "autumn",
+		plugins = {
+			indent_blankline = true, -- Indent-blankline plugin support
+		},
 	},
 	config = function(_, opts)
 		vim.o.termguicolors = true
