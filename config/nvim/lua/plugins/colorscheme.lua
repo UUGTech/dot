@@ -49,6 +49,7 @@ return {
 		vim.api.nvim_set_hl(0, "NeotestWinSelect", { fg = colors.blue })
 		vim.api.nvim_set_hl(0, "NeotestNamespace", { fg = colors.magenta })
 		vim.api.nvim_set_hl(0, "NeotestFailed", { fg = colors.red })
+		vim.api.nvim_set_hl(0, "SpellBad", { underline = true, fg = colors.magenta })
 		-- $base03:    #002b36;
 		-- $base02:    #073642;
 		-- $base01:    #586e75;
