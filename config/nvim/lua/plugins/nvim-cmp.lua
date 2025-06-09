@@ -18,13 +18,17 @@ return {
 		},
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+		"zbirenbaum/copilot.lua",
+		"zbirenbaum/copilot-cmp",
 	},
 	config = function()
 		local cmp = require("cmp")
+		local copilot_cmp = require("copilot_cmp")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 		require("luasnip.loaders.from_vscode").lazy_load()
 		luasnip.config.setup({})
+		copilot_cmp.setup({})
 		cmp.setup({
 			enabled = true,
 			completion = {
@@ -52,6 +56,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "copilot" },
 			}),
 			formatting = {
 				fields = { "abbr", "kind", "menu" },

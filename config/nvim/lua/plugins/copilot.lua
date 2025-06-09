@@ -1,6 +1,17 @@
 return {
 	"zbirenbaum/copilot.lua",
 	event = "InsertEnter",
+	dependencies = {
+		{
+			"zbirenbaum/copilot-cmp",
+			config = function()
+				require("copilot_cmp").setup({
+					suggestion = { enabled = false },
+					panel = { enabled = false },
+				})
+			end,
+		},
+	},
 	cond = function()
 		local disable_dirs = { "~/Documents" }
 		local cwd = vim.fn.getcwd()
