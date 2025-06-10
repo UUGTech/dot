@@ -17,7 +17,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showmatch = true
 vim.o.matchtime = 1
-vim.o.listchars = "eol:$,tab:..,trail:_,lead:."
+-- vim.o.listchars = "eol:$,tab:..,trail:_,lead:."
 vim.o.list = true
 vim.o.scrolloff = 5
 vim.api.nvim_exec(
@@ -93,10 +93,6 @@ vim.api.nvim_set_keymap("v", "<C-p>", '"0p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>n", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>p", ":bprev<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>v", ":vert sball<CR>", { noremap = true, silent = true }) -- splits all buffers
-
--- Center search results when navigating
-vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true })
-vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true })
 
 -- Clear search highlighting with Escape
 vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", { noremap = true, silent = true })
