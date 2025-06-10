@@ -6,14 +6,14 @@ return {
 			init = function()
 				-- Require providers
 				require("hover.providers.lsp")
-				-- require('hover.providers.gh')
-				-- require('hover.providers.gh_user')
+				require("hover.providers.gh")
+				require("hover.providers.gh_user")
 				require("hover.providers.jira")
 				-- require('hover.providers.dap')
 				-- require('hover.providers.fold_preview')
-				-- require('hover.providers.diagnostic')
+				require("hover.providers.diagnostic")
 				-- require('hover.providers.man')
-				-- require('hover.providers.dictionary')
+				require("hover.providers.dictionary")
 			end,
 			preview_opts = {
 				border = "single",
@@ -42,6 +42,12 @@ return {
 
 		-- Mouse support
 		vim.keymap.set("n", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
+		vim.keymap.set("n", "<leader>kp", function()
+			require("hover").hover_switch("previous")
+		end, { desc = "hover.nvim (previous source)" })
+		vim.keymap.set("n", "<leader>kn", function()
+			require("hover").hover_switch("next")
+		end, { desc = "hover.nvim (next source)" })
 		vim.o.mousemoveevent = true
 	end,
 }
