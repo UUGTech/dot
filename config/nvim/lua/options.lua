@@ -56,6 +56,8 @@ vim.o.undodir = vim.fn.stdpath("cache") .. "/undo"
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 
+vim.opt.swapfile = false
+
 -- disable in copilot-chat
 vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "*",
