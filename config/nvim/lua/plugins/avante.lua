@@ -55,7 +55,7 @@ return {
 		},
 		highlights = {
 			diff = {
-				current = "DiffText",
+				current = "DiffDelete",
 				incoming = "DiffAdd",
 			},
 		},
