@@ -177,6 +177,10 @@ return {
 		vim.keymap.set("n", "<leader>fh", require("telescope").extensions.git_file_history.git_file_history, {
 			desc = "Git file history",
 		})
+		require("telescope").load_extension("persisted")
+		vim.keymap.set("n", "<leader>fs", require("telescope").extensions.persisted.persisted, {
+			desc = "Persisted sessions",
+		})
 
 		require("telescope").load_extension("git_file_history")
 	end,
