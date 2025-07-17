@@ -231,6 +231,11 @@ config.keys = {
 			})
 		end),
 	},
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action.SendString("\n"),
+	},
 }
 
 for i = 1, 8 do
