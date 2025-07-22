@@ -80,6 +80,8 @@ return {
 			),
 			dashboard.button("y", "  > Yazi", ":Yazi<CR>"),
 			dashboard.button("q", "󰩈  > Quit NVIM", ":qa<CR>"),
+			dashboard.button("l", "󰒲  > Lazy", ":Lazy<CR>"),
+			dashboard.button("s", "  > Session", ":Telescope persisted<CR>"),
 		}
 
 		alpha.setup(dashboard.opts)
