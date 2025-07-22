@@ -9,9 +9,18 @@ return {
 		"fredrikaverpil/neotest-golang", -- Installation
 	},
 	config = function()
+		local neotest_golang_opts = { -- Specify configuration
+			runner = "go",
+			go_test_args = {
+				"-v",
+				"-race",
+				"-count=1",
+				"-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
+			},
+		}
 		require("neotest").setup({
 			adapters = {
-				require("neotest-golang"), -- Registration
+				require("neotest-golang")(neotest_golang_opts), -- Registration
 			},
 			icons = {
 				expanded = "",
