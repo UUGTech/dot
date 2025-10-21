@@ -129,9 +129,6 @@ return {
 			},
 		})
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<leader>fc", builtin.colorscheme, {
-			desc = "Change colorscheme",
-		})
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, {
 			desc = "Find files",
 		})
@@ -173,6 +170,9 @@ return {
 		})
 		vim.keymap.set("n", "<leader>fw", require("telescope").extensions.windows.list, {
 			desc = "Windows",
+		})
+		vim.keymap.set("n", "<leader>fc", builtin.git_status, {
+			desc = "Git status",
 		})
 		vim.keymap.set("n", "<leader>fh", require("telescope").extensions.git_file_history.git_file_history, {
 			desc = "Git file history",
