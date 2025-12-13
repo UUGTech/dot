@@ -12,8 +12,8 @@ return {
 				support_filetypes = ft.support_filetypes,
 				exclude_filetypes = ft.exclude_filetypes,
 				hl_group = {
-					chunk = "CursorLineNr",
-					error = "Error",
+					chunk = "Function",
+					error = "Warning",
 				},
 				chars = {
 					horizontal_line = "─",
@@ -47,9 +47,9 @@ return {
 			line_num = {
 				notify = true,
 				hl_group = {
-					chunk = "CursorLineNr",
+					chunk = "Function",
 					context = "LineNr",
-					error = "Error",
+					error = "Warning",
 				},
 				support_filetypes = ft.support_filetypes,
 				exclude_filetypes = ft.exclude_filetypes,

@@ -7,7 +7,7 @@ config.tab_bar_at_bottom = true
 config.tab_max_width = 32
 config.window_background_opacity = 1.00
 config.window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW"
-config.macos_window_background_blur = 9
+config.macos_window_background_blur = 10
 config.window_background_image = config.default_background_image
 config.window_background_image_hsb = {
 	brightness = 0.03,
@@ -322,20 +322,8 @@ end)
 
 local canonical_solarized = require("canonical_solarized")
 canonical_solarized.apply_to_config(config)
-config.color_scheme = "Canonical Solarized Light"
-config.colors = {
-	visual_bell = "#657b83",
-	tab_bar = {
-		background = "#fdf6e3",
-		active_tab = {
-			bg_color = "#859900",
-			fg_color = "#eee8d5",
-		},
-		inactive_tab = {
-			bg_color = "#eee8d5",
-			fg_color = "#002b36",
-		},
-	},
-}
+local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").dawn
+config.colors = theme.colors()
+config.window_frame = theme.window_frame()
 config.use_fancy_tab_bar = false
 return config

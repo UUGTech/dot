@@ -1,38 +1,38 @@
-user: "#8839ef"
-group: "#7287fd"
+user: dark_red          # love
+group: dark_yellow      # gold
 permission:
-  read: "#40a02b"
-  write: "#df8e1d"
-  exec: "#e64553"
-  exec-sticky: "#8839ef"
-  no-access: "#6c6f85"
-  octal: "#179299"
-  acl: "#179299"
-  context: "#04a5e5"
+  read: dark_cyan        # foam
+  write: dark_magenta    # iris
+  exec: dark_magenta     # rose
+  exec-sticky: dark_yellow # gold
+  no-access: grey        # muted
+  octal: dark_grey       # subtle
+  acl: cyan              # pine
+  context: dark_grey     # overlay
 date:
-  hour-old: "#179299"
-  day-old: "#04a5e5"
-  older: "#209fb5"
+  hour-old: white        # text
+  day-old: dark_cyan     # foam
+  older: dark_grey       # subtle
 size:
-  none: "#6c6f85"
-  small: "#40a02b"
-  medium: "#df8e1d"
-  large: "#fe640b"
+  none: grey             # muted
+  small: dark_cyan       # pine
+  medium: cyan           # foam
+  large: magenta         # iris
 inode:
-  valid: "#ea76cb"
-  invalid: "#6c6f85"
+  valid: cyan            # foam
+  invalid: grey          # muted
 links:
-  valid: "#ea76cb"
-  invalid: "#6c6f85"
-tree-edge: "#5c5f77"
+  valid: white           # text
+  invalid: grey          # muted
+tree-edge: grey          # muted
 git-status:
-  default: "#4c4f69"
-  unmodified: "#6c6f85"
-  ignored: "#6c6f85"
-  new-in-index: "#40a02b"
-  new-in-workdir: "#40a02b"
-  typechange: "#df8e1d"
-  deleted: "#d20f39"
-  renamed: "#40a02b"
-  modified: "#df8e1d"
-  conflicted: "#d20f39"
+  default: grey          # muted
+  unmodified: dark_grey  # subtle
+  ignored: grey          # muted
+  new-in-index: dark_cyan # foam
+  new-in-workdir: dark_cyan # foam
+  typechange: dark_yellow # gold
+  deleted: dark_red      # love
+  renamed: dark_cyan     # pine
+  modified: dark_magenta # rose
+  conflicted: dark_red   # love

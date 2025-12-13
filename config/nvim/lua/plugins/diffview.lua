@@ -1,6 +1,6 @@
 return {
 	"sindrets/diffview.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	lazy = false,
 	config = function()
 		-- Lua
 		local actions = require("diffview.actions")

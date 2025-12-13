@@ -48,6 +48,7 @@ vim.o.hlsearch = true
 
 -- manipulation
 vim.g.mapleader = " "
+vim.g.maplocalleader = "-"
 vim.opt.clipboard:append({ "unnamedplus" })
 vim.o.ttimeout = true
 vim.o.ttimeoutlen = 50
