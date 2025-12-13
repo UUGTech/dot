@@ -8,6 +8,7 @@
 - [tkmpypy/chowcho.nvim](https://github.com/tkmpypy/chowcho.nvim)
 - [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim)
 - [kyoh86/telescope-windows.nvim](https://github.com/kyoh86/telescope-windows.nvim)
+- [aaronik/treewalker.nvim](https://github.com/aaronik/treewalker.nvim)
 
 
 ## 👨‍💻LSP / Test / Development Support
@@ -21,6 +22,8 @@
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [mrded/nvim-lsp-notify](https://github.com/mrded/nvim-lsp-notify)
 - [SmiteshP/nvim-navic](https://github.com/SmiteshP/nvim-navic)
+- [lewis6991/hover.nvim](https://github.com/lewis6991/hover.nvim)
+- [andythigpen/nvim-coverage](https://github.com/andythigpen/nvim-coverage)
 
 ## 🎄Treesitter
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
@@ -31,22 +34,24 @@
 ## 🕶️Appearance
 - [catppuccin/nvim](https://github.com/catppuccin/nvim)
 - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
-- [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
-- [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim)
+- [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+- [Mr-LLLLL/cool-chunk.nvim](https://github.com/Mr-LLLLL/cool-chunk.nvim)
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [echasnovski/mini.animate](https://github.com/echasnovski/mini.animate)
 - [mawkler/modicator.nvim](https://github.com/mawkler/modicator.nvim)
 - [folke/noice.nvim](https://github.com/folke/noice.nvim)
 - [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
-- [anuvyklack/windows.nvim](https://github.com/anuvyklack/windows.nvim)
+- [nvim-zh/colorful-winsep.nvim](https://github.com/nvim-zh/colorful-winsep.nvim)
+- [sphamba/smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)
+- [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 
 ## 🤖AI
 - [CopilotC-Nvim/CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim)
 - [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-- [yetone/avante.nvim](https://github.com/yetone/avante.nvim)
 - [ravitemer/mcphub.nvim](https://github.com/ravitemer/mcphub.nvim)
+- [folke/sidekick.nvim](https://github.com/folke/sidekick.nvim)
 
 
 ## 🔎Find What You Want
@@ -61,13 +66,17 @@
 - [ruifm/gitlinker.nvim](https://github.com/ruifm/gitlinker.nvim)
 - [FabijanZulj/blame.nvim](https://github.com/FabijanZulj/blame.nvim)
 - [pwntester/octo.nvim](https://github.com/pwntester/octo.nvim)
+- [isakbm/gitgraph.nvim](https://github.com/isakbm/gitgraph.nvim)
+- [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- [akinsho/git-conflict.nvim](https://github.com/akinsho/git-conflict.nvim)
+- [isak102/telescope-git-file-history.nvim](https://github.com/isak102/telescope-git-file-history.nvim)
 
 
 ## ✨A Hint of Magic
 - [chrisgrieser/nvim-recorder](https://github.com/chrisgrieser/nvim-recorder)
 - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
 - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
-- [numToStr/FTerm.nvim](https://github.com/numToStr/FTerm.nvim)
+- [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 - [echasnovski/mini.splitjoin](https://github.com/echasnovski/mini.splitjoin)
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - [mistricky/codesnap.nvim](https://github.com/mistricky/codesnap.nvim)
@@ -76,4 +85,11 @@
 - [MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - [folke/zen-mode.nvim](https://github.com/folke/zen-mode.nvim)
+- [ysmb-wtsg/in-and-out.nvim](https://github.com/ysmb-wtsg/in-and-out.nvim)
+- [jghauser/fold-cycle.nvim](https://github.com/jghauser/fold-cycle.nvim)
+- [bassamsdata/namu.nvim](https://github.com/bassamsdata/namu.nvim)
+- [NTBBloodbath/color-converter.nvim](https://github.com/NTBBloodbath/color-converter.nvim)
+- [amekusa/auto-input-switch.nvim](https://github.com/amekusa/auto-input-switch.nvim)
+- [olimorris/persisted.nvim](https://github.com/olimorris/persisted.nvim)
+- [nvim-mini/mini.bufremove](https://github.com/nvim-mini/mini.bufremove)
 
