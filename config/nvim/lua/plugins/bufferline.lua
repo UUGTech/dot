@@ -4,8 +4,9 @@ return {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
+		local highlights = require("rose-pine.plugins.bufferline")
 		require("bufferline").setup({
-			-- highlights = require("catppuccin.groups.integrations.bufferline").get(),
+			highlights = highlights,
 		})
 	end,
 }

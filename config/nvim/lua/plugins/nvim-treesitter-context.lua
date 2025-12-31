@@ -2,6 +2,18 @@ return {
 	"nvim-treesitter/nvim-treesitter-context",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
+		local function set_context_highlight()
+			local bg = "#2a273f"
+			local line_fg = nil
+			local ok, palette = pcall(require, "rose-pine.palette")
+			if ok and palette then
+				bg = palette.highlight_med or palette.overlay or bg
+				line_fg = palette.subtle
+			end
+			vim.api.nvim_set_hl(0, "TreesitterContext", { bg = bg })
+			vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = bg, fg = line_fg })
+		end
+
 		require("treesitter-context").setup({
 			enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
 			max_lines = 5, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -15,6 +27,12 @@ return {
 			separator = nil,
 			zindex = 20, -- The Z-index of the context window
 			on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+		})
+
+		set_context_highlight()
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			group = vim.api.nvim_create_augroup("TreesitterContextCustomHighlight", { clear = true }),
+			callback = set_context_highlight,
 		})
 	end,
 }
