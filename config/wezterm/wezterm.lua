@@ -7,7 +7,7 @@ config.tab_bar_at_bottom = true
 config.tab_max_width = 32
 config.window_background_opacity = 1.00
 config.window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW"
-config.macos_window_background_blur = 20
+config.macos_window_background_blur = 10
 config.window_background_image = config.default_background_image
 config.window_background_image_hsb = {
 	brightness = 0.03,
@@ -125,6 +125,18 @@ config.keys = {
 				end
 			end),
 		}),
+	},
+	-- Switch to next workspace
+	{
+		key = "n",
+		mods = "LEADER",
+		action = wezterm.action.SwitchWorkspaceRelative(1),
+	},
+	-- Switch to previous workspace
+	{
+		key = "p",
+		mods = "LEADER",
+		action = wezterm.action.SwitchWorkspaceRelative(-1),
 	},
 	-- pane
 	{
