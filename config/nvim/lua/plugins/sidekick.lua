@@ -7,6 +7,14 @@ return {
 				enabled = true,
 				backend = "tmux", -- or "zellij"
 			},
+			win = {
+				layout = "float",
+				float = {
+					width = 0.9,
+					height = 0.9,
+					border = "rounded",
+				},
+			},
 		},
 	},
 	keys = {

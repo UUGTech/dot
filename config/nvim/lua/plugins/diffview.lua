@@ -1,6 +1,11 @@
 return {
 	"sindrets/diffview.nvim",
 	lazy = false,
+	keys = {
+		{ "<leader>dv", "<cmd>DiffviewOpen<CR>", desc = "Open Diffview" },
+		{ "<leader>dc", "<cmd>DiffviewClose<CR>", desc = "Close Diffview" },
+		{ "<leader>dt", "<cmd>DiffviewToggleFiles<CR>", desc = "Toggle Diffview Files" },
+	},
 	config = function()
 		-- Lua
 		local actions = require("diffview.actions")
