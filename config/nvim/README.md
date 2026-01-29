@@ -67,7 +67,7 @@
 - [FabijanZulj/blame.nvim](https://github.com/FabijanZulj/blame.nvim)
 - [pwntester/octo.nvim](https://github.com/pwntester/octo.nvim)
 - [isakbm/gitgraph.nvim](https://github.com/isakbm/gitgraph.nvim)
-- [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- [esmuellert/codediff.nvim](https://github.com/esmuellert/codediff.nvim)
 - [akinsho/git-conflict.nvim](https://github.com/akinsho/git-conflict.nvim)
 - [isak102/telescope-git-file-history.nvim](https://github.com/isak102/telescope-git-file-history.nvim)
 
