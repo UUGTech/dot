@@ -19,6 +19,17 @@ config.audible_bell = "Disabled"
 local act = require("wezterm").action
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
+	-- macOS-style Home/End
+	{
+		key = "LeftArrow",
+		mods = "CMD",
+		action = wezterm.action({ SendString = "\x1bOH" }),
+	},
+	{
+		key = "RightArrow",
+		mods = "CMD",
+		action = wezterm.action({ SendString = "\x1bOF" }),
+	},
 	-- toggle zoom
 	{
 		mods = "LEADER",
