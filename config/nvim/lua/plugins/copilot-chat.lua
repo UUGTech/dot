@@ -23,19 +23,6 @@ return {
 		return true
 	end,
 	config = function()
-		require("CopilotChat").setup({
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>ocb",
-				"<cmd>lua CopilotChatBuffer()<cr>",
-				{ noremap = true, silent = true, desc = "Quick Chat Buffer" }
-			),
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>occ",
-				"<cmd> CopilotChat<cr>",
-				{ noremap = true, silent = true, desc = "Quick Chat" }
-			),
-		})
+		require("CopilotChat").setup({})
 	end,
 }

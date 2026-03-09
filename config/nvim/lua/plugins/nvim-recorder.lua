@@ -1,5 +1,6 @@
 return {
 	"chrisgrieser/nvim-recorder",
+	event = "VeryLazy",
 	dependencies = "rcarriga/nvim-notify", -- optional
 	opts = {
 		-- Named registers where macros are saved (single lowercase letters only).

@@ -56,6 +56,10 @@ return {
 					if client.server_capabilities.documentSymbolProvider then
 						navic.attach(client, bufnr)
 					end
+
+					if client.server_capabilities.inlayHintProvider then
+						vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+					end
 				end
 				mason_lspconfig.setup_handlers({
 					function(server)
@@ -64,6 +68,59 @@ return {
 							on_attach = on_attach,
 						}
 						require("lspconfig")[server].setup(opt)
+					end,
+					-- gopls用の個別設定
+					gopls = function()
+						require("lspconfig").gopls.setup({
+							capabilities = capabilities,
+							on_attach = on_attach,
+							settings = {
+								gopls = {
+									hints = {
+										assignVariableTypes = true,
+										compositeLiteralFields = true,
+										compositeLiteralTypes = true,
+										constantValues = true,
+										functionTypeParameters = true,
+										parameterNames = true,
+										rangeVariableTypes = true,
+									},
+								},
+							},
+						})
+					end,
+					-- TypeScript/JavaScript用の個別設定
+					ts_ls = function()
+						require("lspconfig").ts_ls.setup({
+							capabilities = capabilities,
+							on_attach = on_attach,
+							settings = {
+								typescript = {
+									inlayHints = {
+										includeInlayParameterNameHints = "all",
+										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+										includeInlayFunctionParameterTypeHints = true,
+										includeInlayVariableTypeHints = true,
+										includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+										includeInlayPropertyDeclarationTypeHints = true,
+										includeInlayFunctionLikeReturnTypeHints = true,
+										includeInlayEnumMemberValueHints = true,
+									},
+								},
+								javascript = {
+									inlayHints = {
+										includeInlayParameterNameHints = "all",
+										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+										includeInlayFunctionParameterTypeHints = true,
+										includeInlayVariableTypeHints = true,
+										includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+										includeInlayPropertyDeclarationTypeHints = true,
+										includeInlayFunctionLikeReturnTypeHints = true,
+										includeInlayEnumMemberValueHints = true,
+									},
+								},
+							},
+						})
 					end,
 				})
 			end,
@@ -119,6 +176,9 @@ return {
 		vim.keymap.set("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
 		vim.keymap.set("n", "<space>lr", "<cmd>LspRestart<CR>")
 		vim.keymap.set("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>")
+		vim.keymap.set("n", "<space>ih", function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+		end, { desc = "Toggle inlay hints" })
 		-- vim.keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 		-- vim.keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 		-- LSP handlers

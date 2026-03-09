@@ -1,6 +1,6 @@
 return {
 	"Mr-LLLLL/cool-chunk.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 	},

@@ -1,6 +1,5 @@
 return {
 	"nvim-neotest/neotest",
-	event = "BufReadPre",
 	ft = { "go" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",

@@ -1,6 +1,12 @@
 return {
 	"lewis6991/hover.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	keys = {
+		{ "K", desc = "Hover documentation" },
+		{ "gK", desc = "Hover select provider" },
+		{ "<leader>kp", desc = "Hover previous source" },
+		{ "<leader>kn", desc = "Hover next source" },
+		{ "<MouseMove>", desc = "Hover mouse support" },
+	},
 	config = function()
 		require("hover").setup({
 			init = function()

@@ -37,10 +37,14 @@ return {
 			keymaps = {
 				view = {
 					quit = "q", -- 差分ビューを閉じる
+					toggle_explorer = "<leader>b", -- エクスプローラーパネルの表示切替/フォーカス移動
 					next_hunk = "]c", -- 次の変更へ
 					prev_hunk = "[c", -- 前の変更へ
+					next_file = "<Tab>", -- エクスプローラー内の次のファイルへ
+					prev_file = "<S-Tab>", -- エクスプローラー内の前のファイルへ
 					diff_get = "do", -- 他方のバッファから変更を取得
 					diff_put = "dp", -- 他方のバッファに変更を適用
+					toggle_stage = "-", -- 現在のファイルをステージング/アンステージング
 				},
 				explorer = {
 					select = "<CR>", -- ファイルの差分を開く
@@ -49,6 +53,7 @@ return {
 					stage_all = "S", -- すべてステージング
 					unstage_all = "U", -- すべてアンステージング
 					restore = "X", -- ファイルを復元
+					hover = "K",
 					quit = "q", -- エクスプローラーを閉じる
 				},
 				conflict = {
@@ -71,7 +76,11 @@ return {
 						local name = vim.api.nvim_buf_get_name(buf)
 						local buftype = vim.api.nvim_get_option_value("buftype", { buf = buf })
 						-- 空のバッファ名かつ、通常のバッファタイプで、変更がない場合
-						if name == "" and buftype == "" and not vim.api.nvim_get_option_value("modified", { buf = buf }) then
+						if
+							name == ""
+							and buftype == ""
+							and not vim.api.nvim_get_option_value("modified", { buf = buf })
+						then
 							local bufinfo = vim.fn.getbufinfo(buf)[1]
 							-- どのウィンドウにも表示されていない場合のみ削除
 							if bufinfo and #bufinfo.windows == 0 then
