@@ -20,6 +20,8 @@ return {
 				end,
 			},
 		})
-		require("null-ls").setup({})
+		require("null-ls").setup({
+			default_timeout = 30000, -- 30s
+		})
 	end,
 }
