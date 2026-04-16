@@ -24,8 +24,8 @@ return {
 				if conf.focusable then
 					wins = wins + 1
 
-					-- ウィンドウ数が4以上ならchowchoを起動
-					if wins > 3 then
+					-- ウィンドウ数が3以上ならchowchoを起動
+					if wins > 2 then
 						chowcho.run()
 						return
 					end
