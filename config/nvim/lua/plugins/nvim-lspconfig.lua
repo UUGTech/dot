@@ -191,6 +191,10 @@ return {
 			float = {
 				border = "rounded",
 			},
+			virtual_lines = {
+				current_line = true,
+				severity = { min = vim.diagnostic.ERROR },
+			},
 		})
 	end,
 }

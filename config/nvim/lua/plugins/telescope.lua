@@ -162,6 +162,9 @@ return {
 		vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify, {
 			desc = "Notify",
 		})
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, {
+			desc = "Keymaps",
+		})
 		vim.keymap.set("n", "gr", builtin.lsp_references, {
 			desc = "LSP references",
 		})
