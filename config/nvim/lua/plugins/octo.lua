@@ -1,6 +1,9 @@
 return {
 	"pwntester/octo.nvim",
 	cmd = { "Octo" },
+	keys = {
+		{ "<leader>gp", "<cmd>Octo pr list<cr>", desc = "Octo PR list" },
+	},
 	requires = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",

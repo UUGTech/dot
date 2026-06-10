@@ -10,7 +10,7 @@ return {
 				none = "<leader>g0",
 				both = "<leader>gb",
 				next = "<leader>gn",
-				prev = "<leader>gp",
+				prev = "<leader>gN",
 			}, -- disable buffer local mapping created by this plugin
 			default_commands = true, -- disable commands created by this plugin
 			disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
