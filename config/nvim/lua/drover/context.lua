@@ -37,4 +37,35 @@ function M.open_buffers()
 	return table.concat(lines, "\n")
 end
 
+---@return string? # the raw selected text (no file/line reference bundled in), or nil if no selection
+function M.visual_selection()
+	local start_pos = vim.fn.getpos("'<")
+	local end_pos = vim.fn.getpos("'>")
+	local start_line, start_col = start_pos[2], start_pos[3]
+	local end_line, end_col = end_pos[2], end_pos[3]
+
+	if start_line == 0 or end_line == 0 then
+		return nil
+	end
+
+	local lines = vim.fn.getline(start_line, end_line)
+	if type(lines) == "string" then
+		lines = { lines }
+	end
+	if #lines == 0 then
+		return nil
+	end
+
+	if vim.fn.visualmode() == "v" then
+		if #lines == 1 then
+			lines[1] = string.sub(lines[1], start_col, end_col)
+		else
+			lines[1] = string.sub(lines[1], start_col)
+			lines[#lines] = string.sub(lines[#lines], 1, end_col)
+		end
+	end
+
+	return table.concat(lines, "\n")
+end
+
 return M
