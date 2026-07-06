@@ -56,7 +56,7 @@ toggle_sidebar = "prefix+b"
 [[keys.command]]
 key = "prefix+a"
 type = "pane"
-command = "/Users/ug/Development/dot/config/herdr/agent-picker.sh"
+command = "/Users/iguchi.yuji/Development/dot/config/herdr/agent-picker.sh"
 
 [theme]
 name = "rose-pine"
