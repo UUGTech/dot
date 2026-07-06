@@ -927,6 +927,12 @@ function M.setup(opts)
 
 	if opts.keys.send_selection then
 		vim.keymap.set("x", opts.keys.send_selection, function()
+			-- Leaving visual mode first commits the '</'> marks that
+			-- context.visual_selection() reads. Without this, the callback
+			-- runs while still in visual mode and the marks still hold the
+			-- *previous* selection (or are unset on first use), so drover
+			-- would silently send the wrong text.
+			vim.cmd("normal! " .. vim.api.nvim_replace_termcodes("<Esc>", true, false, true))
 			require("drover.send").send_selection(opts)
 		end, { desc = "drover: send visual selection" })
 	end
@@ -942,6 +948,8 @@ end
 (Only this function body changes — `local M = {}`, the `defaults` table, and `return M` stay as they are.)
 
 **Do not hoist `require("drover.send")` to the top of `M.setup`.** `M.setup()` runs synchronously inside `config/nvim/init.lua`, *before* `require("lazy_nvim")` on the next line — so telescope (a lazily-loaded plugin, loaded on the `VimEnter` event) is not yet on the runtimepath at that point. `drover.send` requires `drover.picker`, which requires `telescope.pickers` at module load time, so requiring it eagerly here throws `module 'telescope.pickers' not found` and breaks Neovim startup entirely. Deferring the `require` into each keymap callback — exactly like this repo's existing `config/nvim/lua/plugins/sidekick.lua` does (e.g. `function() require("sidekick.cli").toggle() end`) — means it only resolves at keypress time, long after startup has finished and telescope is loaded.
+
+**The `<Esc>` before `send_selection` is required, not optional polish.** Verified empirically: an `x`-mode `vim.keymap.set` callback runs *while Neovim is still in Visual mode* (`vim.fn.mode()` returns `"v"` inside the callback), and `'<`/`'>` are not updated until Visual mode is actually exited — they read as unset (`{0,0,0,0}`) on first use, or as the *previous* selection's bounds thereafter. `context.visual_selection()` reads those marks, so without the `<Esc>` the feature silently sends stale or empty text. This is different from `text_objects.lua`'s `<C-U>`-prefixed `:`-cmdline mappings (a different mechanism, for operator-pending text objects) — the fix here is specifically to end Visual mode via a real `<Esc>` keypress before the Lua callback reads the marks.
 
 - [ ] **Step 2: Verify the keymaps are registered**
 
