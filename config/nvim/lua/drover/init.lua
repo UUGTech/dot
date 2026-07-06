@@ -23,23 +23,21 @@ function M.setup(opts)
 	opts = vim.tbl_deep_extend("force", vim.deepcopy(defaults), opts or {})
 	M.opts = opts
 
-	local send = require("drover.send")
-
 	if opts.keys.send_file then
 		vim.keymap.set("n", opts.keys.send_file, function()
-			send.send_file(opts)
+			require("drover.send").send_file(opts)
 		end, { desc = "drover: send current file reference" })
 	end
 
 	if opts.keys.send_selection then
 		vim.keymap.set("x", opts.keys.send_selection, function()
-			send.send_selection(opts)
+			require("drover.send").send_selection(opts)
 		end, { desc = "drover: send visual selection" })
 	end
 
 	if opts.keys.send_buffers then
 		vim.keymap.set("n", opts.keys.send_buffers, function()
-			send.send_buffers(opts)
+			require("drover.send").send_buffers(opts)
 		end, { desc = "drover: send open buffers list" })
 	end
 end
