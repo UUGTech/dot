@@ -973,7 +973,7 @@ This is the step where you actually open Neovim and use the feature, per the "ve
 2. Open any file, e.g. `nvim config/nvim/lua/drover/context.lua`.
 3. Press `<leader>hf`. The telescope picker should open showing `+ New session` plus the live herdr agents from `herdr agent list`.
 4. Pick an existing **idle** agent (check `agent_status` in the picker — don't pick one that's `working`, to avoid interrupting real work).
-5. In a terminal, run `herdr pane read <that pane's id> --lines 5 --format text` and confirm `@config/nvim/lua/drover/context.lua` appears in its input box, **not yet submitted** (no response started).
+5. In a terminal, run `herdr pane read <that pane's id>` (bare invocation — Task 2's spike found that `--format text`/`--lines`/`--source` flags return empty in this herdr version; the plain command reliably returns rendered content) and confirm `@config/nvim/lua/drover/context.lua` appears in its input box, **not yet submitted** (no response started).
 
 - [ ] **Step 2: Existing-session flow — send visual selection**
 
