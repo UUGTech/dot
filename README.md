@@ -10,6 +10,9 @@
 ## Wezterm
 [My Battle Field](./config/wezterm/)
 
+## Herdr
+[My Agent Herd](./config/herdr/)
+
 ## yazi
 [My Hidden Paths](./config/yazi)
 

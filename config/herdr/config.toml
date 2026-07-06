@@ -1,0 +1,92 @@
+# Herdr reads this from ~/.config/herdr/config.toml.
+# Keep WezTerm's ctrl+b leader available outside Herdr by using ctrl+g here.
+onboarding = false
+
+[update]
+channel = "stable"
+version_check = true
+manifest_check = true
+
+[terminal]
+shell_mode = "auto"
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+g"
+
+detach = "prefix+q"
+workspace_picker = "prefix+w"
+goto = "prefix+g"
+
+new_workspace = "prefix+shift+n"
+new_worktree = "prefix+shift+g"
+open_worktree = "prefix+shift+o"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
+
+new_tab = "prefix+c"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+switch_tab = "prefix+1..9"
+rename_tab = "prefix+shift+t"
+close_tab = "prefix+shift+x"
+
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+swap_pane_left = "prefix+shift+h"
+swap_pane_down = "prefix+shift+j"
+swap_pane_up = "prefix+shift+k"
+swap_pane_right = "prefix+shift+l"
+
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+last_pane = "prefix+backtick"
+
+split_vertical = "prefix+v"
+split_horizontal = "prefix+minus"
+close_pane = "prefix+x"
+zoom = "prefix+z"
+resize_mode = "prefix+r"
+copy_mode = "prefix+["
+toggle_sidebar = "prefix+b"
+
+[[keys.command]]
+key = "prefix+a"
+type = "pane"
+command = "/Users/ug/Development/dot/config/herdr/agent-picker.sh"
+
+[theme]
+name = "rose-pine"
+
+auto_switch = false
+[ui]
+sidebar_width = 32
+sidebar_min_width = 18
+sidebar_max_width = 36
+mouse_capture = true
+confirm_close = true
+prompt_new_tab_name = true
+pane_borders = true
+pane_gaps = true
+show_agent_labels_on_pane_borders = true
+agent_panel_sort = "priority"
+
+[ui.toast]
+delivery = "terminal"
+delay_seconds = 2
+
+[ui.toast.herdr]
+position = "bottom-right"
+
+[ui.toast.clipboard]
+enabled = true
+position = "bottom-center"
+
+[ui.sound]
+enabled = false
+
+[session]
+resume_agents_on_restore = true
