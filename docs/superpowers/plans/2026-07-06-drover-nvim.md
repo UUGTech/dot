@@ -919,29 +919,29 @@ function M.setup(opts)
 	opts = vim.tbl_deep_extend("force", vim.deepcopy(defaults), opts or {})
 	M.opts = opts
 
-	local send = require("drover.send")
-
 	if opts.keys.send_file then
 		vim.keymap.set("n", opts.keys.send_file, function()
-			send.send_file(opts)
+			require("drover.send").send_file(opts)
 		end, { desc = "drover: send current file reference" })
 	end
 
 	if opts.keys.send_selection then
 		vim.keymap.set("x", opts.keys.send_selection, function()
-			send.send_selection(opts)
+			require("drover.send").send_selection(opts)
 		end, { desc = "drover: send visual selection" })
 	end
 
 	if opts.keys.send_buffers then
 		vim.keymap.set("n", opts.keys.send_buffers, function()
-			send.send_buffers(opts)
+			require("drover.send").send_buffers(opts)
 		end, { desc = "drover: send open buffers list" })
 	end
 end
 ```
 
 (Only this function body changes — `local M = {}`, the `defaults` table, and `return M` stay as they are.)
+
+**Do not hoist `require("drover.send")` to the top of `M.setup`.** `M.setup()` runs synchronously inside `config/nvim/init.lua`, *before* `require("lazy_nvim")` on the next line — so telescope (a lazily-loaded plugin, loaded on the `VimEnter` event) is not yet on the runtimepath at that point. `drover.send` requires `drover.picker`, which requires `telescope.pickers` at module load time, so requiring it eagerly here throws `module 'telescope.pickers' not found` and breaks Neovim startup entirely. Deferring the `require` into each keymap callback — exactly like this repo's existing `config/nvim/lua/plugins/sidekick.lua` does (e.g. `function() require("sidekick.cli").toggle() end`) — means it only resolves at keypress time, long after startup has finished and telescope is loaded.
 
 - [ ] **Step 2: Verify the keymaps are registered**
 
