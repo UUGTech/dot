@@ -31,6 +31,12 @@ function M.setup(opts)
 
 	if opts.keys.send_selection then
 		vim.keymap.set("x", opts.keys.send_selection, function()
+			-- Leaving visual mode first commits the '</'> marks that
+			-- context.visual_selection() reads. Without this, the callback
+			-- runs while still in visual mode and the marks still hold the
+			-- *previous* selection (or are unset on first use), so drover
+			-- would silently send the wrong text.
+			vim.cmd("normal! " .. vim.api.nvim_replace_termcodes("<Esc>", true, false, true))
 			require("drover.send").send_selection(opts)
 		end, { desc = "drover: send visual selection" })
 	end

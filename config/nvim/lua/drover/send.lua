@@ -53,7 +53,14 @@ local function start_new_and_send(opts, text)
 			return
 		end
 
-		herdr.focus(new_pane_id)
+		local focus_ok, focus_err = herdr.focus(new_pane_id)
+		if not focus_ok then
+			vim.notify("drover: " .. (focus_err or "failed to focus"), vim.log.levels.WARN)
+		end
+		local unzoom_ok, unzoom_err = herdr.unzoom(new_pane_id)
+		if not unzoom_ok then
+			vim.notify("drover: " .. (unzoom_err or "failed to unzoom"), vim.log.levels.WARN)
+		end
 		local sent_ok, send_err = herdr.send(new_pane_id, text)
 		if not sent_ok then
 			vim.notify("drover: " .. (send_err or "failed to send"), vim.log.levels.ERROR)
@@ -65,8 +72,14 @@ end
 ---@param target drover.Agent
 ---@param text string
 local function send_to_existing(opts, target, text)
-	herdr.focus(target.pane_id)
-	herdr.unzoom(target.pane_id)
+	local focus_ok, focus_err = herdr.focus(target.pane_id)
+	if not focus_ok then
+		vim.notify("drover: " .. (focus_err or "failed to focus"), vim.log.levels.WARN)
+	end
+	local unzoom_ok, unzoom_err = herdr.unzoom(target.pane_id)
+	if not unzoom_ok then
+		vim.notify("drover: " .. (unzoom_err or "failed to unzoom"), vim.log.levels.WARN)
+	end
 	local ok, err = herdr.send(target.pane_id, text)
 	if not ok then
 		vim.notify("drover: " .. (err or "failed to send"), vim.log.levels.ERROR)
