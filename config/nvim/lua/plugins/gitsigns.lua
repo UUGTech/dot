@@ -94,10 +94,6 @@ return {
 				map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview hunk" })
 				map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
 
-				map("n", "<leader>hb", function()
-					gitsigns.blame_line({ full = true })
-				end, { desc = "Blame line" })
-
 				map("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff this" })
 
 				map("n", "<leader>hD", function()
