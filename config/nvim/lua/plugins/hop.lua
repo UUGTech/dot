@@ -1,6 +1,6 @@
 return {
-	"phaazon/hop.nvim",
-	branch = "v2", -- optional but strongly recommended
+	"smoka7/hop.nvim",
+	branch = "master",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		-- you can configure Hop the way you like here; see :h hop-config

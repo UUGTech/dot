@@ -73,11 +73,6 @@ return {
 			dashboard.button("e", "  > New file", "<cmd>ene <CR>"),
 			dashboard.button("f", "  > Find file", ":Telescope find_files<CR>"),
 			dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
-			dashboard.button(
-				"s",
-				"  > Settings",
-				":e ~/.config/nvim/_init.lua | :cd %:p:h | split . | wincmd k | pwd<CR>"
-			),
 			dashboard.button("y", "  > Yazi", ":Yazi<CR>"),
 			dashboard.button("q", "󰩈  > Quit NVIM", ":qa<CR>"),
 			dashboard.button("l", "󰒲  > Lazy", ":Lazy<CR>"),
