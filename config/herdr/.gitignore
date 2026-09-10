@@ -1,3 +1,4 @@
 *.log
 *.sock
 session.json
+snapshots/

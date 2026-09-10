@@ -11,7 +11,7 @@
 [My Battle Field](./config/wezterm/)
 
 ## Herdr
-[My Agent Herd](./config/herdr/)
+[My Agent Herd](./config/herdr/) — Cursor session restore: `config/herdr/cursor-sessions.sh`
 
 ## yazi
 [My Hidden Paths](./config/yazi)

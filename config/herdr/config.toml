@@ -60,11 +60,11 @@ command = "/Users/iguchi.yuji/Development/dot/config/herdr/agent-picker.sh"
 
 [theme]
 name = "rose-pine"
+auto_switch = false
 
 [theme.custom]
 accent="#ebbcba"
 
-auto_switch = false
 [ui]
 sidebar_width = 32
 sidebar_min_width = 18
